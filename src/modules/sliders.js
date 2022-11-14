@@ -30,6 +30,7 @@ const sliders = () => {
 
     const swiperServices = new Swiper(".swiper-services", {
         modules: [Navigation],
+        spaceBetween: 30,
         loop: true,
         navigation: {
             nextEl: ".services__arrow--right",
