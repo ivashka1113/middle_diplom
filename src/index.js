@@ -1,5 +1,9 @@
 "use strict";
 
-import modalHeader from "./modules/modalHeader";
+import modals from "./modules/modals";
+import sliders from "./modules/sliders";
+import timer from "./modules/timer";
 
-modalHeader();
+sliders();
+modals();
+timer("20 november 2022");
