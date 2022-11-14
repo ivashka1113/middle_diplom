@@ -1,3 +1,5 @@
 "use strict";
 
-console.log("Hello world!")
+import modalHeader from "./modules/modalHeader";
+
+modalHeader();
