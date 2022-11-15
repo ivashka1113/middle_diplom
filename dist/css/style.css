@@ -1985,7 +1985,9 @@ input.error {
   right: 25px;
   bottom: 25px;
   transform: rotate(90deg);
+  cursor: pointer;
 }
+
 
 @media (min-width: 576px) {
   .benefits-wrap {
