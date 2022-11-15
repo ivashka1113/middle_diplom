@@ -9,6 +9,7 @@ const sliders = () => {
         modules: [Navigation],
         slidesPerView: 1,
         loop: true,
+        spaceBetween: 30,
         navigation: {
             nextEl: ".benefits__arrow--right",
             prevEl: ".benefits__arrow--left ",
