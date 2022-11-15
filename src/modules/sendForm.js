@@ -53,8 +53,8 @@ const sendForm = ({
         form.append(statusBlock);
 
         someElement.forEach(elem => {
-            const element = document.getElementById(elem.id)
-            if (inputPage.value === "Балконы" && element.value !== "") formBody[elem.id] = element.textContent;
+            const element = document.getElementById(elem.id);
+            if (inputPage.value === "Балконы" && element.value !== "") formBody[elem.id] = element.value;
         })
 
         if (validate(formElements)) {
@@ -63,7 +63,7 @@ const sendForm = ({
                     formElements.forEach(input => {
                         statusBlock.src = successUrl;
                         statusBlock.classList.add("active");
-                        input.value = "";
+                        if (input === inputName || input === inputPhone) input.value = "";
                     })
                 }).then(data => {
                     setTimeout(() => {
