@@ -1920,7 +1920,7 @@ input.error {
 
 .benefits__item {
   width: 100%;
-  max-width: 185px;
+  /* max-width: 185px; */
 }
 
 .benefits-arrows {
@@ -1935,6 +1935,10 @@ input.error {
   width: 30px;
   height: 30px;
   cursor: pointer;
+}
+
+.swiper {
+  max-width: 800px;
 }
 
 .benefits__arrow>img {
