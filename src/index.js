@@ -13,7 +13,7 @@ import showComments from "./modules/showComments"
 
 
 getComments("comments.json").then(data => {
-    console.log(data);
+    showComments(data);
 })
 
 sliders();

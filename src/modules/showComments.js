@@ -1,40 +1,68 @@
 "use strict";
 
 const showComments = (data) => {
-    // const main = document.querySelector("main");
 
-    // if (data.length === 0) {
-    //     main.innerHTML = `<span class = "no-results">"Sorry, your search did not match any results."</span>`;
-    //     return;
-    // } else {
-    //     main.innerHTML = "";
-    // }
+    const commentContainer = document.querySelector(".comments-container");
 
-    // data.forEach((card) => {
-    //     let div = document.createElement("div");
-    //     div.classList.add("card");
+    let i = 0;
 
-    //     div.innerHTML = `
-    //     <img class="card-img" src="${card.photo}">
-    //     <div class="card-info">
-    //         <div class= "card-title">
-    //             <h2 class="card-title-text">${card.name}</h2>
-    //             <img class="gender-img" src="./images/${card.gender}.svg">
-    //         </div>
-    //         <div class="card-desc">
-    //         <div class="status-species">
-    //             <span>${card.status}</span>
-    //             &nbsp;-&nbsp;
-    //             <span>${card.species === undefined ? "unknown" : card.species}</span>
-    //         </div>
-    //             <p>Real name - ${card.realName === undefined ? "unknown" : card.realName}</p>
-    //             <p>Citizenship - ${card.citizenship === undefined ? "unknown" : card.citizenship}</p>
-    //             <p>Actors - ${card.actors}</p>
-    //         </div>
-    //     </div>`
+    const showCommentsThree = () => {
+        commentContainer.innerHTML = "";
 
-    //     main.append(div);
-    // });
+        const dataComments = [data.comments[i], data.comments[i + 1], data.comments[i + 2]];
+
+        dataComments.forEach((comment) => {
+            let div = document.createElement("div");
+            div.classList.add("review-margin-bottom", "row", "comment-item");
+
+            if (comment.id % 2 === 0) {
+                div.innerHTML = `
+                <div class="col-xs-3 col-sm-2">
+                    <div class="review-user">
+                    <img src="../images/users/${comment.image !== "" ? comment.image : "face-default.png"}" alt="" class="img-responsive avatar">
+                    </div>
+                </div>
+                <div class="col-xs-9 col-sm-9">
+                    <div class="review-inner review-green review-arrow review-arrow-left">
+                        <p class="text-normal">${comment.author}</p>
+                        <p>${comment.comment}</p>
+                    </div>
+                </div>
+                </div>
+                `
+            } else {
+                div.innerHTML = `
+                <div class="col-xs-9 col-sm-9">
+                    <div class="review-inner review-gray review-arrow review-arrow-right">
+                        <p class="text-normal">${comment.author}</p>
+                        <p>${comment.comment}</p>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-2">
+                    <div class="review-user">
+                        <img src="../images/users/${comment.image !== "" ? comment.image : "face-default.png"}" alt="" class="img-responsive avatar">
+                    </div>
+                </div>
+                </div>
+                `
+            }
+
+            commentContainer.append(div);
+
+        });
+
+    };
+
+    showCommentsThree();
+
+    setInterval(() => {
+        if (i < data.comments.length - 3) {
+            i++;
+        } else {
+            i = 0;
+        }
+        showCommentsThree();
+    }, 20000)
 
 }
 
