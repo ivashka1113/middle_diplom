@@ -31,6 +31,7 @@ const calculator = () => {
     })
 
     calcSquare.addEventListener("input", () => {
+        calcSquare.value = calcSquare.value.replace(/[^\d]/, "");
         if (!isNaN(+calcType.options[calcType.selectedIndex].value)) {
             countCalc();
         } else {
