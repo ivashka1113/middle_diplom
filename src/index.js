@@ -8,6 +8,13 @@ import formValid from './modules/formValid.js';
 import scrollBtn from "./modules/scrollBtn";
 import modalDocuments from "./modules/modalDocuments";
 import calculator from "./modules/calculator";
+import getComments from "./modules/getComments";
+import showComments from "./modules/showComments"
+
+
+getComments("comments.json").then(data => {
+    console.log(data);
+})
 
 sliders();
 modals();
