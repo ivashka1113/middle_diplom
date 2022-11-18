@@ -4,7 +4,7 @@ const modalDocuments = () => {
 
     const documents = document.querySelectorAll(".sertificate-document");
     const overlay = document.querySelector(".overlay");
-    const body = document.querySelector("body")
+    const body = document.querySelector("body");
 
     documents.forEach((doc) => {
 
@@ -13,7 +13,8 @@ const modalDocuments = () => {
         const closeBtn = document.createElement("button");
         closeBtn.classList.add("doc-btn");
         closeBtn.innerHTML = `<img class = "popup-close-btn-img" src = "./images/cross-svgrepo-com.svg">`
-        docImg.classList.add("doc")
+        docImg.classList.add("doc");
+        docImg.classList.add("animated");
         docImg.innerHTML = `<img class="document-img" src="../images/documents/original/${docImgSrc}"></img>`;
         docImg.append(closeBtn);
         body.append(docImg);
@@ -24,11 +25,13 @@ const modalDocuments = () => {
             e.preventDefault()
             overlay.style.display = "block";
             docImg.style.display = "block";
+            docImg.classList.add("fadeIn");
         })
 
         closeBtn.addEventListener("click", () => {
             overlay.style.display = "none";
             docImg.style.display = "none";
+            docImg.classList.remove("fadeIn")
         })
     })
 }
