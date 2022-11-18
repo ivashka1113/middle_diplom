@@ -18,7 +18,7 @@ getComments("comments.json").then(data => {
 
 sliders();
 modals();
-timer("20 november 2022");
+timer("22 november 2022");
 formValid();
 modalDocuments();
 
